@@ -16,4 +16,10 @@ async function main() {
   }
 }
 
-main();
+// Only run the server locally, not on Vercel
+if (!process.env.VERCEL) {
+  main();
+}
+
+// Export for Vercel serverless
+export default app;
